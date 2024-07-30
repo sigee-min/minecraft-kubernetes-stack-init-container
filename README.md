@@ -1,0 +1,1 @@
+# minecraft-kubernetes-stack-init-container
