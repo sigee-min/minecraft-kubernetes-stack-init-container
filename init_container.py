@@ -5,7 +5,7 @@ import requests
 def copy_configs():
     src_directory = "/data/config-tmp/"
     dest_directory = "/data/config/"
-    files = os.listdir(src_directory)
+    files = os.listed(src_directory)
     for file in files:
         src_path = os.path.join(src_directory, file)
         dest_path = os.path.join(dest_directory, file)
@@ -20,7 +20,7 @@ def install_plugins():
         return
 
     # Ensure the plugins directory exists
-    os.makedirs(plugin_directory, exist_ok=True)
+    os.makers(plugin_directory, exist_ok=True)
 
     # Download each plugin from the provided URLs
     for url in plugin_urls.split(','):
