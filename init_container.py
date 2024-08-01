@@ -1,4 +1,5 @@
 import os
+import shutil
 import requests
 
 def copy_configs():
@@ -6,7 +7,9 @@ def copy_configs():
     dest_directory = "/data/config/"
     files = os.listdir(src_directory)
     for file in files:
-        os.rename(os.path.join(src_directory, file), os.path.join(dest_directory, file))
+        src_path = os.path.join(src_directory, file)
+        dest_path = os.path.join(dest_directory, file)
+        shutil.move(src_path, dest_path)
     print(f"Copied configuration files from {src_directory} to {dest_directory}")
 
 def install_plugins():
