@@ -5,14 +5,18 @@ import requests
 def copy_configs():
     src_directory = "/data/config-tmp/"
     dest_directory = "/data/config/"
+    root_directory = "/data/"
 
     os.makedirs(dest_directory, exist_ok=True)
+    os.makedirs(dest_plugin_directory, exist_ok=True)
 
     files = os.listdir(src_directory)
 
     for file in files:
         src_path = os.path.join(src_directory, file)
         dest_path = os.path.join(dest_directory, file)
+        if file == "server.properties":
+            dest_path  = os.path.join(root_directory, file)
 
         try:
             if os.path.exists(dest_path):
