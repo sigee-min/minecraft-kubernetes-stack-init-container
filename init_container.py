@@ -8,7 +8,6 @@ def copy_configs():
     root_directory = "/data/"
 
     os.makedirs(dest_directory, exist_ok=True)
-    os.makedirs(dest_plugin_directory, exist_ok=True)
 
     files = os.listdir(src_directory)
 
